@@ -1,4 +1,4 @@
-name: Destroy Azure Resource Group
+name: Delete Azure Resource Group
 
 on:
   workflow_dispatch:
@@ -30,13 +30,9 @@ jobs:
         enable-AzPSSession: true
 
     # Destroy Resource Group
-    - name: Destroy Resource Group
-      run: |
-        az group delete --name ${{ secrets.AZURE_RG }} --yes --no-wait
-
-#    - name: Azure ARM Deployment
-#      uses: azure/ARM@v1
-#      with:
-#        azcliversion: 2.0.72
-#        inlineScript: |
-#          az group delete --name ${{ secrets.AZURE_RG }} --yes --no-wait
+    - name: Azure ARM Deployment
+      uses: azure/ARM@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+          az group delete --name ${{ secrets.AZURE_RG }} --yes --no-wait
