@@ -35,7 +35,7 @@ namespace RazorPagesTestSample.Tests.UnitTests
         {
             using (var db = new AppDbContext(Utilities.TestDbContextOptions()))
             {
-                 // Arrange
+                // Arrange
                 var recId = 10;
                 var expectedMessage = new Message() { Id = recId, Text = "Message" };
 
