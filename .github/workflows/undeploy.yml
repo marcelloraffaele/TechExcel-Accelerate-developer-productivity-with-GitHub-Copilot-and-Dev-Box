@@ -2,14 +2,6 @@ name: Delete Azure Resource Group
 
 on:
   workflow_dispatch:
-    inputs:
-      appenv:
-        type: choice
-        description: Choose the target environment
-        options:
-          - dev
-          - test
-          - prod
 
 jobs:
   destroy:
